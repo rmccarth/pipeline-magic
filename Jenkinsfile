@@ -8,12 +8,16 @@ pipeline {
             echo "running build"
             sh "./build.sh"
          }
-
       }
       stage('Test') {
           steps {
             echo "running test"
-            sh "./test.sh"
+
+            def testResult = ./test.sh
+            if (testResult == 'Failed') {
+               error "test failed"
+            }
+            
           }
       }
       stage('Deploy') {
