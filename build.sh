@@ -1,9 +1,7 @@
 #!/bin/sh
 
 # Build
-python -m py_compile test.py
+python -m py_compile sample.py
 
 # Test
-python test.pyc
-
-
+python sample.pyc
