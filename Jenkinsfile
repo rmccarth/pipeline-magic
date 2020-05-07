@@ -10,15 +10,12 @@ pipeline {
          }
       }
       stage('Test') {
-          steps {
             echo "running test"
 
             def testResult = ./test.sh
             if (testResult == 'Failed') {
                error "test failed"
             }
-            
-          }
       }
       stage('Deploy') {
           steps {
