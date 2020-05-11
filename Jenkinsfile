@@ -23,7 +23,7 @@ pipeline {
          //should publish a file to the git repo that indicates a successful build
          steps {
             sh 'python3 generate_Artifact.py'
-            withCredentials([usernamePassword(credentialsId: 'd87d8042-fa99-4745-ab9c-ab4cfa120802', passwordVariable: 'Emt#GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+            withCredentials([usernamePassword(credentialsId: 'd87d8042-fa99-4745-ab9c-ab4cfa120802', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh('''
                            git config --local credential.helper "!f() { echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD; }; f"
                            git push origin HEAD:master
