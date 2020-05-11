@@ -1,6 +1,5 @@
 pipeline {
    agent any
-
    stages {
       stage('Fetch') {
          steps {
@@ -9,17 +8,12 @@ pipeline {
       }
       stage('Test') {
          steps {
-          ./test.sh
-      }
-      }
-      stage('Build') {
-         steps {
-          ./build.sh
+            sh 'python3 tester.py'
       }
       }
       stage('Run') {
          steps {
-          ./runner.sh
+            sh 'python3 sample.py'
       }
       }
    }
