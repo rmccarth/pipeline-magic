@@ -6,6 +6,7 @@ pipeline {
             sh 'git config --global user.email "rob.mccarthy31@gmail.com"'
             sh 'git config --global user.name "rmccarth"'
             git 'https://github.com/rmccarth/pipeline-magic.git'
+            sh 'git checkout -B dev'
          }
       }
       stage('Test') {
@@ -27,8 +28,7 @@ pipeline {
                            git config --local credential.helper "!f() { echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD; }; f"
                            git add .
                            git commit -m "adding artifact to repo from jenkins"
-                           git push origin master
-                           ls 
+                           git push origin dev:master
                         ''')
                }
       }
