@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python sample.pyc
+python3 sample.pyc

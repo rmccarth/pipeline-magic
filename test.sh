@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python tester.py
+python3 tester.py
