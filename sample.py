@@ -1,6 +1,6 @@
 def hello():
-    print("hello from jenkins")
-    return "hello from jenkins"
+    print("maybe next this will ask for a string")
+    return "maybe next this will ask for a string"
 
 def parse(stringElement):
     lastCharacter = stringElement[len(stringElement)-1:]
