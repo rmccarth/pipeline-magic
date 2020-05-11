@@ -26,7 +26,7 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'd87d8042-fa99-4745-ab9c-ab4cfa120802', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh('''
                            git config --local credential.helper "!f() { echo username=\\$GIT_USERNAME; echo password=\\$GIT_PASSWORD; }; f"
-                           git add .
+                           git add artifact.txt
                            git commit -m "adding artifact to repo from jenkins"
                            git push origin dev:master
                         ''')
